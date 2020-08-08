@@ -34,13 +34,13 @@ function App() {
   }
 
   if (!quiz.length)
-    return <h3>Loading...</h3>
+    return <h3 >Loading...</h3>
 
   if (ShowResult) {
     return (<div >
       <div className="Result">
         <h1>Result:</h1>
-        <p className="h1text">Your Final Score is <b>{result}</b> out of <b>{quiz.length}</b></p>
+        <p className="h1text">Your Final Score is <b>{result}</b> out of: <b>{quiz.length}</b></p>
         <div className="btntry">
           <button
             className="btn"
@@ -55,7 +55,7 @@ function App() {
   return (
     <div className="App" >
       <h1>QuizApp</h1>
-  <h3>Question Number: {currentStep}</h3>
+  <h4>Question Number: {currentStep} out of: {quiz.length}</h4>
   <div className="hscore">
   <h4 className="score">Your Score: {result}</h4>
   </div>
