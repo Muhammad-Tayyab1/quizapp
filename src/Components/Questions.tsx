@@ -4,7 +4,6 @@ import {Questionsprops} from './../Types/Quiz_type'
      
     let [userAns, setUserAns] =useState("")
     const handleChangeEvent=(ev:any)=>{
-       // console.log(ev.target.value)
         setUserAns(ev.target.value)
     }
     return (

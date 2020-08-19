@@ -25,7 +25,7 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>Quiz App</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -40,5 +40,25 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script>
+      if ('serviceWorker' in navigator && 'PushManager' in window) {
+          console.log('Service Worker and Push are supported');
+
+          navigator.serviceWorker.register('sw.js')
+              .then((swReg) => {
+                  console.log('Service Worker is registered', swReg);
+
+                  swRegistration = swReg;
+              })
+              .catch((error) => {
+                  console.error('Service Worker Error', error);
+              });
+      } else {
+          console.warn('Push messaging is not supported');
+          pushButton.textContent = 'Push Not Supported';
+      }
+  </script>
+  <script src="/scripts/install.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
   </body>
 </html>
